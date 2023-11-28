@@ -3,7 +3,7 @@
 import getRecipe from '../services/theMealDB.js';
 
 function createRecipeCards(recipe) {
-    const card = document.createElement('article');
+    const card = document.createElement('div');
     card.classList.add('recipe-card');
 
     const image = document.createElement('img');
@@ -18,7 +18,7 @@ async function renderRecipeCards() {
     const data = await getRecipe();
     const recipes = data.meals;
 
-    const recipeContainer = document.querySelector('.recipe-cards-container');
+    const recipeContainer = document.querySelector('.recipe-cards');
 
     recipeContainer.innerHTML = '';
 
