@@ -1,49 +1,22 @@
-// scripts/recipeCards.js
-
-import getRecipe from '../services/theMealDB.js';
+import { createRecipeModal, openModal } from './recipeModal.js';
 
 function createRecipeCards(recipe) {
+    const { strMealThumb, strMeal } = recipe;
+
     const card = document.createElement('div');
     card.classList.add('recipe-card');
 
     const image = document.createElement('img');
-    image.src = recipe.strMealThumb;
-    image.alt = recipe.strMeal;
-
+    image.src = strMealThumb;
+    image.alt = strMeal;
     card.appendChild(image);
+
+    card.addEventListener('click', () => {
+        createRecipeModal(recipe);
+        openModal();
+    });
+
     return card;
 }
 
-async function renderRecipeCards() {
-    const data = await getRecipe();
-    const recipes = data.meals;
-
-    const recipeContainer = document.querySelector('.recipe-cards');
-
-    recipeContainer.innerHTML = '';
-
-    recipes.forEach((recipe) => {
-        const card = createRecipeCards(recipe);
-        recipeContainer.appendChild(card);
-    });
-}
-
-export default renderRecipeCards;
-
-// async function renderRecipeCards() {
-//     const data = await getRecipe();
-//     const recipes = data.meals;
-//     const recipeContainer = document.querySelector('.recipe-cards-container');
-
-//     recipeContainer.innerHTML = '';
-
-//     recipes.forEach((recipe) => {
-//         recipeContainer.innerHTML += `
-//         <article class="recipe-card">
-//             <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}">
-//         </article>
-//         `;
-//     });
-// }
-
-// export default renderRecipeCards;
+export default createRecipeCards;

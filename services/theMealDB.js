@@ -1,5 +1,3 @@
-//services/theMealDB.js
-
 const API_URL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 
 async function getRecipe() {
@@ -11,11 +9,9 @@ async function getRecipe() {
         }
 
         const data = await response.json();
-
         return data;
     } catch (error) {
         console.error(`Download error: ${error.message}`);
-
         return null;
     }
 }
