@@ -1,6 +1,6 @@
 import { createRecipeModal, openModal } from './recipeModal.js';
 
-function createRecipeCards(recipe) {
+function createRecipeCard(recipe) {
     const { strMealThumb, strMeal } = recipe;
 
     const card = document.createElement('div');
@@ -19,4 +19,4 @@ function createRecipeCards(recipe) {
     return card;
 }
 
-export default createRecipeCards;
+export default createRecipeCard;

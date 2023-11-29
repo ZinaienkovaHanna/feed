@@ -1,5 +1,5 @@
 import getRecipe from '../services/theMealDB.js';
-import createRecipeCards from './recipeCards.js';
+import createRecipeCard from './recipeCard.js';
 
 const recipeContainer = document.querySelector('.recipe-cards');
 
@@ -10,7 +10,7 @@ async function renderRecipeCards() {
     recipeContainer.innerHTML = '';
 
     recipes.forEach((recipe) => {
-        const card = createRecipeCards(recipe);
+        const card = createRecipeCard(recipe);
         recipeContainer.appendChild(card);
     });
 }

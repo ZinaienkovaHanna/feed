@@ -22,6 +22,7 @@ function openModal() {
     modal.style.display = 'block';
 }
 function closeModal() {
+    modal.innerHTML = '';
     modal.style.display = 'none';
 }
 
