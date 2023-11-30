@@ -1,3 +1,5 @@
+import createElementImg from './createElementImg.js';
+
 const modal = document.querySelector('#recipe-modal');
 
 function createRecipeModal(recipe) {
@@ -7,9 +9,7 @@ function createRecipeModal(recipe) {
     const modalContent = document.createElement('div');
     modalContent.classList.add('modal-content');
 
-    const img = document.createElement('img');
-    img.src = image;
-    img.alt = name;
+    const img = createElementImg(image, name);
 
     const closeBtn = document.createElement('span');
     closeBtn.id = 'close-modal-btn';
