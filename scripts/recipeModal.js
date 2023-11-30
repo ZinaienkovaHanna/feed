@@ -29,6 +29,7 @@ function createRecipeModal(recipe) {
 
     const imgAndText = document.createElement('div');
     imgAndText.classList.add('modal_content_flex');
+
     const img = createElementImg(image, name, 'modal_content_img');
 
     const p = document.createElement('p');
