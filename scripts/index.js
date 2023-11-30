@@ -1,12 +1,10 @@
-import getRecipe from '../services/theMealDB.js';
+import getRecipes from '../services/recipesAPI.js';
 import createRecipeCard from './recipeCard.js';
 
-const recipeContainer = document.querySelector('.recipe-cards');
+const recipeContainer = document.querySelector('#recipe-cards');
 
 async function renderRecipeCards() {
-    const data = await getRecipe();
-    const recipes = data.meals;
-
+    const recipes = await getRecipes();
     recipeContainer.innerHTML = '';
 
     recipes.forEach((recipe) => {

@@ -1,21 +1,35 @@
 const modal = document.querySelector('#recipe-modal');
 
 function createRecipeModal(recipe) {
-    const { strMealThumb, strMeal, strInstructions } = recipe;
+    const { image, name, instructions } = recipe;
+    modal.innerHTML = '';
 
-    const modalContent = `
-        <div class="modal-content">
-            <img src="${strMealThumb}" alt="${strMeal}">
-            <span id="close-modal-btn" class="close">&times;</span>
-            <h2>${strMeal}</h2>
-            <p>${strInstructions}</p>
-        </div>
-    `;
+    const modalContent = document.createElement('div');
+    modalContent.classList.add('modal-content');
 
-    modal.innerHTML = modalContent;
+    const img = document.createElement('img');
+    img.src = image;
+    img.alt = name;
 
-    const closeBtn = modal.querySelector('#close-modal-btn');
-    closeBtn.addEventListener('click', closeModal);
+    const closeBtn = document.createElement('span');
+    closeBtn.id = 'close-modal-btn';
+    closeBtn.classList.add('close');
+    closeBtn.innerHTML = '&times;';
+    closeBtn.addEventListener('click', () => {
+        closeModal();
+    });
+
+    const h2 = document.createElement('h2');
+    h2.innerHTML = name;
+
+    const p = document.createElement('p');
+    p.innerHTML = instructions;
+
+    modalContent.appendChild(img);
+    modalContent.appendChild(closeBtn);
+    modalContent.appendChild(h2);
+    modalContent.appendChild(p);
+    modal.appendChild(modalContent);
 }
 
 function openModal() {
@@ -27,35 +41,3 @@ function closeModal() {
 }
 
 export { createRecipeModal, openModal };
-
-// function createRecipeModal(recipe) {
-//     const { strMealThumb, strMeal, strInstructions } = recipe;
-//     modal.innerHTML = '';
-
-//     const modalContent = document.createElement('div');
-//     modalContent.classList.add('modal-content');
-
-//     const image = document.createElement('img');
-//     image.src = strMealThumb;
-//     image.alt = strMeal;
-//     modalContent.appendChild(image);
-
-//     const closeBtn = document.createElement('span');
-//     closeBtn.id = 'close-modal-btn';
-//     closeBtn.classList.add('close');
-//     closeBtn.innerHTML = '&times;';
-//     closeBtn.addEventListener('click', () => {
-//         closeModal();
-//     });
-//     modalContent.appendChild(closeBtn);
-
-//     const h2 = document.createElement('h2');
-//     h2.innerHTML = strMeal;
-//     modalContent.appendChild(h2);
-
-//     const p = document.createElement('p');
-//     p.innerHTML = strInstructions;
-//     modalContent.appendChild(p);
-
-//     modal.appendChild(modalContent);
-// }

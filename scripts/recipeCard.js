@@ -1,15 +1,15 @@
 import { createRecipeModal, openModal } from './recipeModal.js';
 
 function createRecipeCard(recipe) {
-    const { strMealThumb, strMeal } = recipe;
+    const { image, name } = recipe;
 
     const card = document.createElement('div');
     card.classList.add('recipe-card');
 
-    const image = document.createElement('img');
-    image.src = strMealThumb;
-    image.alt = strMeal;
-    card.appendChild(image);
+    const img = document.createElement('img');
+    img.src = image;
+    img.alt = name;
+    card.appendChild(img);
 
     card.addEventListener('click', () => {
         createRecipeModal(recipe);
