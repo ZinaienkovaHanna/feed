@@ -9,10 +9,8 @@ async function renderRecipeCards() {
 
     clearElementInnerHTML(recipeContainer);
 
-    recipes.forEach((recipe) => {
-        const card = createRecipeCard(recipe);
-        recipeContainer.appendChild(card);
-    });
+    const cards = recipes.map((recipe) => createRecipeCard(recipe));
+    recipeContainer.append(...cards);
 }
 
 renderRecipeCards();

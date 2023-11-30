@@ -17,10 +17,12 @@ async function getRecipes() {
                 strMealThumb: image,
                 strMeal: name,
                 strInstructions: instructions,
+                strArea: country,
             }) => ({
                 image,
                 name,
                 instructions,
+                country,
             })
         );
 
