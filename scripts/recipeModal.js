@@ -23,9 +23,11 @@ function createRecipeModal(recipe) {
 
     const h2 = document.createElement('h2');
     h2.textContent = name;
+    h2.classList.add('modal_content_header');
 
     const p = document.createElement('p');
     p.textContent = instructions;
+    h2.classList.add('modal_content_text');
 
     modalContent.appendChild(img);
     modalContent.appendChild(closeBtn);

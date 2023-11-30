@@ -10,6 +10,8 @@ async function getRecipes() {
 
         const data = await response.json();
 
+        console.log(data);
+
         const recipes = data.meals.map(
             ({
                 strMealThumb: image,

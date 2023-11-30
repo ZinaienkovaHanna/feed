@@ -22,24 +22,24 @@
     align-items: center;
 }
 
-.modal_content img {
+.modal_content_img {
     width: 100px;
     border-radius: 5px;
 }
 
-.modal_content h2,
+.modal_content_header,
 p {
     color: var(--text);
     font-family: Montserrat;
 }
 
-.modal_content h2 {
+.modal_content_header {
     font-size: 32px;
     font-weight: 700;
     margin-left: 16px;
 }
 
-.modal_content p {
+.modal_content_text {
     font-size: 12px;
     font-weight: 400;
     grid-column: span 3;
