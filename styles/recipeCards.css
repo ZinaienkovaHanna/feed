@@ -1,22 +1,22 @@
-.recipe-cards {
+.recipe_cards {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 12px;
 }
 
-.recipe-card {
+.recipe_card {
     position: relative;
     cursor: pointer;
 }
 
-.recipe-card img {
+.recipe_card img {
     display: block;
     width: 100%;
     height: auto;
     border-radius: 5px;
 }
 
-.recipe-card::before {
+.recipe_card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -29,6 +29,6 @@
     transition: opacity 0.3s ease;
 }
 
-.recipe-card:hover::before {
+.recipe_card:hover::before {
     opacity: 1;
 }

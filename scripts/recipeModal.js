@@ -1,7 +1,7 @@
 import createElementImg from './createElementImg.js';
 import clearElementInnerHTML from './clearElementInnerHTML.js';
 
-const modal = document.querySelector('#recipe-modal');
+const modal = document.querySelector('#recipe_modal');
 
 function createRecipeModal(recipe) {
     const { image, name, instructions } = recipe;
@@ -9,23 +9,23 @@ function createRecipeModal(recipe) {
     clearElementInnerHTML(modal);
 
     const modalContent = document.createElement('div');
-    modalContent.classList.add('modal-content');
+    modalContent.classList.add('modal_content');
 
-    const img = createElementImg(image, name);
+    const img = createElementImg(image, name, 'modal_content_img');
 
-    const closeBtn = document.createElement('span');
-    closeBtn.id = 'close-modal-btn';
+    const closeBtn = document.createElement('div');
+    closeBtn.id = 'close_modal_btn';
     closeBtn.classList.add('close');
-    closeBtn.innerHTML = '&times;';
+    closeBtn.textContent = '✖';
     closeBtn.addEventListener('click', () => {
         closeModal();
     });
 
     const h2 = document.createElement('h2');
-    h2.innerHTML = name;
+    h2.textContent = name;
 
     const p = document.createElement('p');
-    p.innerHTML = instructions;
+    p.textContent = instructions;
 
     modalContent.appendChild(img);
     modalContent.appendChild(closeBtn);
@@ -42,4 +42,9 @@ function closeModal() {
     modal.style.display = 'none';
 }
 
-export { createRecipeModal, openModal };
+function createAndOpenRecipeModal(recipe) {
+    createRecipeModal(recipe);
+    openModal();
+}
+
+export default createAndOpenRecipeModal;

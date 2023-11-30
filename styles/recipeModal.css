@@ -8,7 +8,7 @@
     background-color: var(--bg-modal);
 }
 
-.modal-content {
+.modal_content {
     position: absolute;
     width: 50%;
     top: 50%;
@@ -22,24 +22,24 @@
     align-items: center;
 }
 
-.modal-content img {
+.modal_content img {
     width: 100px;
     border-radius: 5px;
 }
 
-.modal-content h2,
+.modal_content h2,
 p {
     color: var(--text);
     font-family: Montserrat;
 }
 
-.modal-content h2 {
+.modal_content h2 {
     font-size: 32px;
     font-weight: 700;
     margin-left: 16px;
 }
 
-.modal-content p {
+.modal_content p {
     font-size: 12px;
     font-weight: 400;
     grid-column: span 3;
@@ -50,8 +50,7 @@ p {
     position: absolute;
     top: 12px;
     right: 24px;
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 24px;
     cursor: pointer;
 }
 
