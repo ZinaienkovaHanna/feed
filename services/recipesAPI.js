@@ -10,14 +10,17 @@ async function getRecipes() {
 
         const data = await response.json();
 
-        const recipes = data.meals.map((recipe) => {
-            const { strMealThumb, strMeal, strInstructions } = recipe;
-            return {
-                name: strMeal,
-                image: strMealThumb,
-                instructions: strInstructions,
-            };
-        });
+        const recipes = data.meals.map(
+            ({
+                strMealThumb: image,
+                strMeal: name,
+                strInstructions: instructions,
+            }) => ({
+                image,
+                name,
+                instructions,
+            })
+        );
 
         return recipes;
     } catch (error) {
