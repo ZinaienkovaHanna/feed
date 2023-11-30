@@ -1,10 +1,12 @@
 import createElementImg from './createElementImg.js';
+import clearElementInnerHTML from './clearElementInnerHTML.js';
 
 const modal = document.querySelector('#recipe-modal');
 
 function createRecipeModal(recipe) {
     const { image, name, instructions } = recipe;
-    modal.innerHTML = '';
+
+    clearElementInnerHTML(modal);
 
     const modalContent = document.createElement('div');
     modalContent.classList.add('modal-content');
@@ -36,7 +38,7 @@ function openModal() {
     modal.style.display = 'block';
 }
 function closeModal() {
-    modal.innerHTML = '';
+    clearElementInnerHTML(modal);
     modal.style.display = 'none';
 }
 
