@@ -1,18 +1,16 @@
-import getRecipe from '../services/theMealDB.js';
+import getRecipes from '../services/recipesAPI.js';
 import createRecipeCard from './recipeCard.js';
+import clearElementInnerHTML from './clearElementInnerHTML.js';
 
-const recipeContainer = document.querySelector('.recipe-cards');
+const recipeContainer = document.querySelector('#recipe_cards');
 
 async function renderRecipeCards() {
-    const data = await getRecipe();
-    const recipes = data.meals;
+    const recipes = await getRecipes();
 
-    recipeContainer.innerHTML = '';
+    clearElementInnerHTML(recipeContainer);
 
-    recipes.forEach((recipe) => {
-        const card = createRecipeCard(recipe);
-        recipeContainer.appendChild(card);
-    });
+    const cards = recipes.map((recipe) => createRecipeCard(recipe));
+    recipeContainer.append(...cards);
 }
 
 renderRecipeCards();

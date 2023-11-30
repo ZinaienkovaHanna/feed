@@ -5,53 +5,56 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--bg-modal);
+    background-color: var(--backgroundModal);
 }
 
-.modal-content {
+.modal_content {
     position: absolute;
     width: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 40px;
-    background-color: var(--bg);
-    border-radius: 5px;
-    display: grid;
-    grid-template-rows: auto auto auto;
-    align-items: center;
+    background-color: var(--backgroundMain);
+    border-radius: 4px;
 }
 
-.modal-content img {
-    width: 100px;
-    border-radius: 5px;
+.modal_content_flex {
+    display: flex;
+    gap: 24px;
 }
 
-.modal-content h2,
-p {
-    color: var(--text);
-    font-family: Montserrat;
+.modal_content_img {
+    width: 280px;
+    height: 280px;
+    border-radius: 4px;
 }
 
-.modal-content h2 {
-    font-size: 32px;
+.modal_content_title {
+    color: var(--title);
+    font-size: 24px;
     font-weight: 700;
-    margin-left: 16px;
 }
 
-.modal-content p {
+.modal_content_country_name {
+    color: var(--header);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.modal_content_text {
+    color: var(--text);
     font-size: 12px;
     font-weight: 400;
-    grid-column: span 3;
-    margin-top: 16px;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 .close {
     position: absolute;
     top: 12px;
     right: 24px;
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 24px;
     cursor: pointer;
 }
 
